@@ -3,8 +3,8 @@ TaskFlow — Team Task Manager
 
 A full-stack web application for team collaboration: create projects, assign tasks, and track progress with role-based access control.
 
-Live URL: [Your Railway URL here]
-GitHub: [Your GitHub Repo URL here]
+Live URL: [https://taskflow-co.up.railway.app]
+GitHub: [https://github.com/siddhu249/taskmanager]
 
 --------------------------------------------------
 TECH STACK
@@ -217,19 +217,3 @@ taskmanager/
     │       └── Users.js          Team directory
     ├── railway.toml
     └── package.json
-
---------------------------------------------------
-DEMO VIDEO SCRIPT (2-5 min)
---------------------------------------------------
-0:00 - Show the live URL and describe the app briefly
-0:20 - Signup as Admin → show dashboard (empty)
-0:40 - Create a project
-1:00 - Add a member (signup as member in another tab first)
-1:20 - Create tasks with different statuses / priorities / due dates
-2:00 - Show task editing, status changes
-2:30 - Show the dashboard stats updating
-3:00 - Show overdue task highlighting
-3:30 - Log in as the Member, show restricted access
-4:00 - Show the Team page
-4:20 - Show the GitHub repo + README
-4:40 - Wrap up
