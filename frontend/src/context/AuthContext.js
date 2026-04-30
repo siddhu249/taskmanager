@@ -8,14 +8,21 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    const saved = localStorage.getItem('user');
-    if (token && saved) {
+  const token = localStorage.getItem('token');
+  const saved = localStorage.getItem('user');
+
+  if (token && saved && saved !== 'undefined') {
+    try {
       setUser(JSON.parse(saved));
       api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    } catch (error) {
+      localStorage.removeItem('user');
+      localStorage.removeItem('token');
     }
-    setLoading(false);
-  }, []);
+  }
+
+  setLoading(false);
+}, []);
 
   const login = (token, userData) => {
     localStorage.setItem('token', token);
