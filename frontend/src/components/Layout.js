@@ -27,23 +27,25 @@ export default function Layout() {
             >
               <span className="icon">{item.icon}</span>
               {item.label}
-              {item.path === '/users' && user?.role !== 'admin' ? null : null}
             </button>
           ))}
         </nav>
-        <div className="sidebar-bottom">
-          <div className="sidebar-user">
-            <strong>{user?.name}</strong>
-            <span className={`badge badge-${user?.role}`}>{user?.role}</span>
-          </div>
-          <button className="btn btn-secondary btn-sm" style={{width:'100%'}} onClick={logout}>
-            Sign Out
-          </button>
-        </div>
       </aside>
-      <main className="main">
-        <Outlet />
-      </main>
+      <div className="page-shell">
+        <header className="topbar">
+          <div className="topbar-badge">Task management made simple</div>
+          <div className="topbar-actions">
+            <div className="user-pill">
+              <span>{user?.name}</span>
+              <strong>{user?.role}</strong>
+            </div>
+            <button className="btn btn-secondary btn-sm" onClick={logout}>Sign Out</button>
+          </div>
+        </header>
+        <main className="main">
+          <Outlet />
+        </main>
+      </div>
     </div>
   );
 }
